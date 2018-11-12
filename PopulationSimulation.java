@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class PopulationSimulation
 {
-    public long count = 0;
+    public static long count = 0;
 
     //Basic Structure of a human
     public static class Human
@@ -20,6 +20,8 @@ public class PopulationSimulation
             this.mother = null;
             this.nextSibling = null;
             this.spouse = null;
+            this.sex = maleOrFemale();
+            this.pan = ++count;
         }
     }
 
@@ -33,7 +35,7 @@ public class PopulationSimulation
     }
 
     //Detemining sex
-    public boolean maleOrFemale ()
+    public static boolean maleOrFemale ()
     {
         Random rand = new Random();
         int randNumber = rand.nextInt(1000);
@@ -50,6 +52,20 @@ public class PopulationSimulation
 
     public static void main(String[] args)
     {
+        Human first = new Human();
+        Human second = new Human();
+        Human third = new Human();
+        System.out.println("first is " + first.sex);
+        System.out.println("with pan " + first.pan);
+        System.out.println();
+
+        System.out.println("second is " + second.sex);
+        System.out.println("with pan " + second.pan);
+        System.out.println();
+
+        System.out.println("third is " + third.sex);
+        System.out.println("with pan " + third.pan);
+        System.out.println();
 
     }
 }
