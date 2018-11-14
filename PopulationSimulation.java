@@ -9,7 +9,7 @@ public class PopulationSimulation
     public static class Human
     {
         long pan;
-        boolean sex; //True is Male
+        boolean sex; //True is Male & False is Female
         Human father;
         Human mother;
         Human nextSibling;
@@ -67,5 +67,9 @@ public class PopulationSimulation
         System.out.println("with pan " + third.pan);
         System.out.println();
 
+        for (int i = 0; i < 10; i++)
+        {
+            ;
+        }
     }
 }
