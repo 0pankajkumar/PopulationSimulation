@@ -1,7 +1,7 @@
 # PopulationSimulation
 A simulation of Human population starting at 2000 B.C.
 
-Starting with very few ancestors the program bulids up the ppopulation i runtime.
+Starting with very few ancestors the program bulids up the population i runtime.
 Humans are created using objects concept which is nuts & bolts for java.
 
 ## Moto
