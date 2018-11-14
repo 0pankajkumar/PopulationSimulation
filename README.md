@@ -12,3 +12,5 @@ Since, a lot of human objects will be created which will become a mess when we r
 
 ## Rules of the Game
 
+!alt[alt tree structure](https://raw.githubusercontent.com/805bluebell/PopulationSimulation/master/Initial_Tree_Structure.jpg)
+
