@@ -21,29 +21,27 @@ public class Human extends Thread
         this.spouse = null;
         this.sex = maleOrFemale();
         this.pan = ++count;
-        System.out.println("Creating Thread");
+        System.out.println("Creating Human");
         this.age = age;
     }
     public void run()
     {
-        try
+
+        // Displaying the thread that is running
+        if(sex)
         {
-            // Displaying the thread that is running
-            System.out.println ("Thread " +
-                  Thread.currentThread().getId() +
-                  " is running");
-            if(Thread.currentThread().getId() % 2 == 0)
-            {
-                Thread.sleep(10000);
-            }
+            System.out.println ("Man " + pan + " is alive at Thread "
+                                + Thread.currentThread().getId() );
 
         }
-        catch (Exception e)
+        else
         {
-            // Throwing an exception
-            System.out.println ("Exception is caught");
+            System.out.println ("Woman " + pan + " is alive at Thread "
+                                + Thread.currentThread().getId() );
+
         }
-        System.out.println("Thread " + Thread.currentThread().getId() + " exiting.");
+
+        System.out.println("Man " + Thread.currentThread().getId() + " is dead. RIP");
     }
 
 
