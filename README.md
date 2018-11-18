@@ -9,7 +9,13 @@ The sole purpose of churning the cpu with this code is to see how human populati
 Criterias & phenomenas deciding the death & growth will be subjected to lot of edits & updates since the world was hard to predict from its genesis & we are just playing around it.
 
 ## Selection of langauage : Java
-Since, a lot of human objects will be created which will become a mess when we reach population explosions. So, to avoid garbage collection problem **Java** has been chosen which provides the juice for free. Ofcourse, Python and other friends can do the same job. But today it is a Java day.
+Since, a lot of human objects will be created which will become a mess when we reach population explosions. So, to avoid garbage collection problem **Java** has been chosen which provides the juice for free.
+Ofcourse, Python and other friends can do the same job. But today it is a Java day.
+Also, each object will be an independent thread running so that we can best create a world with
+several humans living simultaneously. Though, we know that such this is an illusion created by
+rapid switching of threads such that it appears all threads executing at once.
+This switching is done in robin round manner by binding java threads with Operating system threads. (This was found here https://www.researchgate.net/post/How_is_Thread_scheduling_in_Java_done)
+
 
 ## Rules of the Game
 1. 10 couples start the game at 2000 B.C.

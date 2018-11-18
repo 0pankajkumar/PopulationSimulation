@@ -6,11 +6,14 @@ public class PopulationSimulation
     public static void main(String[] args)
     {
         Random rand = new Random();
-        Human first = new Human(rand.nextInt(80));
-        Human second = new Human(rand.nextInt(80));
 
-        first.start();
-        second.start();
+        for(int i = 0; i < 20; i++)
+        {
+            Human first = new Human(rand.nextInt(80));
+            first.start();
+        }
+
+
 
 
     }
