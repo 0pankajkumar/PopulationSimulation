@@ -28,20 +28,20 @@ public class Human extends Thread
     {
 
         // Displaying the thread that is running
-        if(sex)
+        if(sex) //If Male
         {
-            System.out.println ("Man " + pan + " is alive at Thread "
-                                + Thread.currentThread().getId() );
-
+            System.out.println ("Man " + pan + " is alive at Thread " + Thread.currentThread().getId());
+            try{Thread.sleep(this.age);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
+            System.out.println("Man " + Thread.currentThread().getId() + " is dead. RIP");
         }
-        else
+        else //If Female
         {
-            System.out.println ("Woman " + pan + " is alive at Thread "
-                                + Thread.currentThread().getId() );
-
+            System.out.println ("Woman " + pan + " is alive at Thread " + Thread.currentThread().getId());
+            try{Thread.sleep(this.age);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
+            System.out.println("Woman " + Thread.currentThread().getId() + " is dead. RIP");
         }
 
-        System.out.println("Man " + Thread.currentThread().getId() + " is dead. RIP");
+
     }
 
 
