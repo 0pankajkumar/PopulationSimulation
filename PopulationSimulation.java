@@ -7,9 +7,9 @@ public class PopulationSimulation
     {
         Random rand = new Random();
 
-        for(int i = 0; i < 10; i++)
+        for(int i = 0; i < 2; i++)
         {
-            Human first = new Human(rand.nextInt(80));
+            Human first = new Human(rand.nextInt(8));
             first.start();
         }
 

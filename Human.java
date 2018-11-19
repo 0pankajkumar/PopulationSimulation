@@ -44,12 +44,12 @@ public class Human extends Thread
         {
             System.out.println ("Man " + Thread.currentThread().getId() + " is alive");
 
-            //Sleep till 20
+            //Sleep till 2
             //Only if human has that much to live. Otherwise die.
-            if(this.age > 20)
+            if(this.age > 2)
             {
-                try{Thread.sleep(20);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
-                //Eligible for marriage after 20
+                try{Thread.sleep(2);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
+                //Eligible for marriage after 2
     		    marriageList.add(this); //This Human is added in marriage queue
 
     		    //Find a suitable match & marrying
@@ -59,7 +59,7 @@ public class Human extends Thread
     		    this.mate();
 
     		    //Sleep for rest of time
-    		    try{Thread.sleep(this.age - 20);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
+    		    try{Thread.sleep(this.age - 2);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
 
             }
             else
@@ -75,12 +75,12 @@ public class Human extends Thread
         {
             System.out.println ("Woman " + Thread.currentThread().getId() + " is alive");
 
-            //Sleep till 20
+            //Sleep till 2
             //Only if human has that much to live. Otherwise die.
-            if(this.age > 20)
+            if(this.age > 2)
             {
-                try{Thread.sleep(20);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
-                //Eligible for marriage after 20
+                try{Thread.sleep(2);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
+                //Eligible for marriage after 2
     		    marriageList.add(this); //This Human is added in marriage queue
 
     		    //Find a suitable match & marrying
@@ -90,7 +90,7 @@ public class Human extends Thread
     		    this.mate();
 
     		    //Sleep for rest of time
-    		    try{Thread.sleep(this.age - 20);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
+    		    try{Thread.sleep(this.age - 2);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
 
             }
             else
@@ -135,6 +135,7 @@ public class Human extends Thread
             if(temp.sex == interestedIn) //If match is of opposite sex
             {
                 //Marrying the match
+                System.out.println("Match found for " + Thread.currentThread().getId());
                 this.spouse = temp;
                 temp.spouse = this.spouse;
                 break;
@@ -145,37 +146,40 @@ public class Human extends Thread
     //Mating
     public void mate()
     {
-        Random rand = new Random();
-        int randNumber = rand.nextInt(10); //Randomly deciding number of children they will have
-
-        Human fath = null;
-        Human moth = null;
-        //Assigning father & mother to the child born
-        if(this.sex == true)
+        if(this.spouse != null)
         {
-            fath = this;
-            moth = this.spouse;
-        }
-        if(this.sex == false)
-        {
-            moth = this;
-            fath = this.spouse;
-        }
+            Random rand = new Random();
+            int randNumber = rand.nextInt(10); //Randomly deciding number of children they will have
 
-        Human elderSibling = new Human(rand.nextInt(80));
-        //Children taking birth
-        for(int j = 0; j < randNumber - 1; j++)
-        {
-            Human child = new Human(rand.nextInt(80));
-            child.father = fath;
-            child.mother = moth;
-            elderSibling.nextSibling = child;
-            //Now child knows who is his/her father, mother & sibling
+            Human fath = null;
+            Human moth = null;
+            //Assigning father & mother to the child born
+            if(this.sex == true)
+            {
+                fath = this;
+                moth = this.spouse;
+            }
+            if(this.sex == false)
+            {
+                moth = this;
+                fath = this.spouse;
+            }
 
-            //starting the child thread
-            child.start();
+            Human elderSibling = new Human(rand.nextInt(8));
+            //Children taking birth
+            for(int j = 0; j < randNumber - 1; j++)
+            {
+                Human child = new Human(rand.nextInt(8));
+                child.father = fath;
+                child.mother = moth;
+                elderSibling.nextSibling = child;
+                //Now child knows who is his/her father, mother & sibling
 
-            elderSibling = child;
+                //starting the child thread
+                child.start();
+
+                elderSibling = child;
+            }
         }
     }
 }
