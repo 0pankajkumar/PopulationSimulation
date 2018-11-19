@@ -13,6 +13,8 @@ public class PopulationSimulation
             first.start();
         }
 
+        long net = Human.count - Human.dead;
+        System.out.println("\n\nNet threads: " + net + "\n");
 
 
 

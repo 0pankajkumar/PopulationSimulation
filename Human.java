@@ -8,6 +8,7 @@ public class Human extends Thread
 {
     Node head;
     public static long count = 0;
+    public static long dead = 0;
     long pan;
     boolean sex; //True is Male & False is Female
     int age;
@@ -67,7 +68,7 @@ public class Human extends Thread
 
             }
 
-
+            dead++;
             System.out.println("Man " + Thread.currentThread().getId() + " is dead. RIP");
         }
         else //If Female
@@ -98,7 +99,7 @@ public class Human extends Thread
 
             }
 
-
+            dead++;
             System.out.println("Woman " + Thread.currentThread().getId() + " is dead. RIP");
         }
 
@@ -170,6 +171,9 @@ public class Human extends Thread
             child.mother = moth;
             elderSibling.nextSibling = child;
             //Now child knows who is his/her father, mother & sibling
+
+            //starting the child thread
+            child.start();
 
             elderSibling = child;
         }
