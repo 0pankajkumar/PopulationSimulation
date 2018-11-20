@@ -35,7 +35,7 @@ public class Human extends Thread
         this.age = age;
     }
 
-    LinkedList<Human> marriageList = new LinkedList<Human>();
+    public static LinkedList<Human> marriageList = new LinkedList<Human>();
     public void run()
     {
 
@@ -51,6 +51,12 @@ public class Human extends Thread
                 try{Thread.sleep(2);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
                 //Eligible for marriage after 2
     		    marriageList.add(this); //This Human is added in marriage queue
+
+
+                {
+
+                    System.out.println(marriageList.size());
+                }
 
     		    //Find a suitable match & marrying
                 this.match();
@@ -82,6 +88,9 @@ public class Human extends Thread
                 try{Thread.sleep(2);} catch(InterruptedException e) {System.out.println("Thread sleep error");}
                 //Eligible for marriage after 2
     		    marriageList.add(this); //This Human is added in marriage queue
+
+                System.out.println(marriageList.size());
+
 
     		    //Find a suitable match & marrying
                 this.match();
@@ -146,7 +155,7 @@ public class Human extends Thread
     //Mating
     public void mate()
     {
-        if(this.spouse != null)
+        if(this.spouse != null) //Checking whether spouse is present
         {
             Random rand = new Random();
             int randNumber = rand.nextInt(10); //Randomly deciding number of children they will have
