@@ -2,6 +2,9 @@ package Helper;
 
 import java.util.Random;
 import java.util.*;
+import java.util.concurrent.ExecutorService; //For harnessing thread pool facility
+import java.util.concurrent.Executors;
+
 
 //Basic Structure of a human
 public class Human extends Thread
@@ -179,15 +182,20 @@ public class Human extends Thread
             for(int j = 0; j < randNumber - 1; j++)
             {
                 Human child = new Human(rand.nextInt(8));
+                ExecutorService service2 = Executors.newFixedThreadPool(8);
                 child.father = fath;
                 child.mother = moth;
                 elderSibling.nextSibling = child;
                 //Now child knows who is his/her father, mother & sibling
 
                 //starting the child thread
-                child.start();
+                //child.start();
+                service2.execute(child);
 
                 elderSibling = child;
+
+                service2.shutdown();
+                while (!service2.isTerminated()) {}
             }
         }
     }
