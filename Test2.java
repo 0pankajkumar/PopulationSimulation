@@ -1,28 +1,24 @@
-import Helper.Martian; //The actual code is in this package
-import java.util.*; // For generating random numbers for random age
+import java.util.*;
 
-public class PopulationSimulation
+public class Test2
 {
     public static void main(String[] args)
     {
-        Random rand = new Random();
-
+        int a = 0;
         //declaring ArrayList with initial size n
         ArrayList<ArrayList> arrli = new ArrayList<ArrayList>(5);
 
         for (int j = 0; j < 5; j++)
         {
-            ArrayList<Martian> arrlili = new ArrayList<Martian>(5);
+            ArrayList<Integer> arrlili = new ArrayList<Integer>(5);
             for (int i = 0; i < 5; i++)
             {
-                arrlili.add(new Martian(rand.nextInt(80)));
+                arrlili.add(a);
+                a++;
             }
             arrli.add(arrlili);
         }
 
         System.out.println(arrli);
-
-
-
     }
 }
