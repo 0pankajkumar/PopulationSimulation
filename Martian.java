@@ -4,24 +4,39 @@ import java.util.*;
 
 public class Martian
 {
-    int pan;
-    boolean sex; //True is Male & False is Female
-    int age;
-
-    public static int count = 0;
-    public static int dead = 0;
-
-    Martian youngerSibling;
-    Martian elderSibling;
-
-    public Martian(int age)
+    public void generation()
     {
-        this.elderSibling = null;
-        this.youngerSibling = null;
-        this.sex = maleOrFemale();
-        this.pan = ++count;
-        System.out.println("Creating Human with age " + age);
-        this.age = age;
+        ArrayList<boolean[]> arrli = new ArrayList<boolean[]>(); //List of a generation
+
+        for loop till 2000 assuming 100 years for each generation
+        {
+
+            generation = mate(gen1); //Includes die. Return a ArrayList of newly created generation
+                                        //Gen1 is passed, Gen2 will be returned
+            genLi.add(generation); //New generation is added to List of generations
+
+
+
+
+
+
+
+
+
+
+
+
+            int offsprings = getOffsprings(); //Calculate No. of offsprings of first mating
+            //Array of all siblings. True is male & False female
+            for loop till a
+        }
+    }
+
+    //Mate & die
+    public void mate()
+    {
+        //Mate
+        //null or kill those two individuals
     }
 
     //Detemining sex randomly
