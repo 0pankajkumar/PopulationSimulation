@@ -3,26 +3,42 @@ import java.util.*; // For generating random numbers for random age
 
 public class PopulationSimulation
 {
-    public static void main(String[] args)
+    public static void initialGenerations()
     {
         Random rand = new Random();
 
-        //declaring ArrayList with initial size n
-        ArrayList<ArrayList> arrli = new ArrayList<ArrayList>(5);
-
-        for (int j = 0; j < 5; j++)
+        //Adding 1st generation of 3 families for free
+        for (int u = 0; u < 3; u++)
         {
-            ArrayList<Martian> arrlili = new ArrayList<Martian>(5);
-            for (int i = 0; i < 5; i++)
-            {
-                arrlili.add(new Martian(rand.nextInt(80)));
-            }
-            arrli.add(arrlili);
+            Martian.maharashtra.add(rand.nextInt(10));
         }
+        Martian.india.add(Martian.maharashtra);
+        //Done adding first family
 
-        System.out.println(arrli);
-
-
+        //Adding 2nd generation of 10 families for free
+        for (int u = 0; u < 10; u++)
+        {
+            Martian.maharashtra.add(rand.nextInt(10));
+        }
+        Martian.india.add(Martian.maharashtra);
+        //Done adding second family
 
     }
+    public static void main(String[] args)
+    {
+        Martian obj = new Martian();
+        Random rand = new Random();
+
+        initialGenerations();
+
+        //loop till 2000 assuming 100 years for each generation
+        for (int u = 0; u < 2000; u++)
+        {
+
+            obj.mate(); //Includes die.
+        }
+
+    }
+
+
 }

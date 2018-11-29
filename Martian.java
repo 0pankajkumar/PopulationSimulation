@@ -4,21 +4,10 @@ import java.util.*;
 
 public class Martian
 {
-    public static ArrayList<ArrayList> generationList = new ArrayList<ArrayList>(); //List of a generations
+    public static ArrayList<ArrayList> india = new ArrayList<ArrayList>(4); //List of a generations
 
-    public static ArrayList<boolean[]> familyList = new ArrayList<boolean[]>(); //List of families belonging to a generation
+    public static ArrayList<Integer> maharashtra = new ArrayList<Integer>(); //List of families belonging to a generation
 
-    public void generation()
-    {
-        for (int u = 0; u < 2000; u++) //loop till 2000 assuming 100 years for each generation
-        {
-
-            mate(); //Includes die.
-
-
-
-        }
-    }
 
     //Mate & die
     public void mate()
@@ -35,16 +24,35 @@ public class Martian
             and they are left to die.
         -------------------------------------------------------------------------
         */
-        int randomFamilies[] = RandomizeArray(familyList.size());
-        for (int i = 0; i < generationList.get(1).size(); i++)
+        int randomFamilies[] = RandomizeArray(india.get(1).size());
+
+        //Loop till length of randomFamilies[]
+        for (int i = 1; i < randomFamilies.length - 1; i++)
         {
-            generationList.get(i);
+            if (maleOrFemale()) //male encountered
+            {
+                //Ruling out nearby families in mating game
+                if (!(randomFamilies[i] + 1 == randomFamilies[i+1]) || (randomFamilies[i] - 1 == randomFamilies[i-1]))
+                {
+                    //Looping till a match is found
+                    while (!selectMatch(randomFamilies[i]))
+                    {
+                        //Keep looping till a match is found
+                    }
+                    //decrement family size as mate has been found
+                    int foo = (Integer)(india.get(1).get(randomFamilies[i]));
+                    //System.out.println(india.get(1).get(randomFamilies[i]));
+                    foo--;
+                    india.get(1).set(i, foo);
+
+                }
+
+            }
         }
 
-        //null or kill those two individuals
 
 
-        //generationList.add(); //New generation is added to List of generations
+
 
     }
 
@@ -67,5 +75,25 @@ public class Martian
         return array;
     }
 
+    //Detemining sex randomly
+    public boolean maleOrFemale ()
+    {
+        Random rand = new Random();
+        int randNumber = rand.nextInt(1000);
+        if(randNumber % 2 == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    //Selecting a match from other family
+    public boolean selectMatch (int current)
+    {
+        return true;
+    }
 
 }
