@@ -6,7 +6,7 @@ import java.util.concurrent.ExecutorService; //For harnessing thread pool facili
 import java.util.concurrent.Executors;
 
 
-//Basic Structure of a human
+//Basic Structure of a humann
 public class Human extends Thread
 {
     Node head;

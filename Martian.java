@@ -32,7 +32,9 @@ public class Martian
             if (maleOrFemale()) //male encountered
             {
                 //Ruling out nearby families in mating game
-                if (!(randomFamilies[i] + 1 == randomFamilies[i+1]) || (randomFamilies[i] - 1 == randomFamilies[i-1]))
+                if (!(randomFamilies[i] + 1 == randomFamilies[i+1]) ||
+                        (randomFamilies[i] - 1 == randomFamilies[i-1]) ||
+                        randomFamilies[i] < 1)
                 {
                     //Looping till a match is found
                     while (!selectMatch(randomFamilies[i]))
@@ -42,7 +44,7 @@ public class Martian
                     //decrement family size as mate has been found
                     int foo = (Integer)(india.get(1).get(randomFamilies[i]));
                     //System.out.println(india.get(1).get(randomFamilies[i]));
-                    foo--;
+                    --foo;
                     india.get(1).set(i, foo);
 
                 }
@@ -51,7 +53,7 @@ public class Martian
         }
 
 
-
+    System.out.println(india);
 
 
     }
