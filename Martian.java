@@ -4,9 +4,7 @@ import java.util.*;
 
 public class Martian
 {
-    public static ArrayList<ArrayList> india = new ArrayList<ArrayList>(4); //List of a generations
-
-    public static ArrayList<Integer> maharashtra = new ArrayList<Integer>(); //List of families belonging to a generation
+    public static ArrayList<ArrayList> india = new ArrayList<ArrayList>(); //List of a generations
 
 
     //Mate & die
@@ -26,26 +24,36 @@ public class Martian
         */
         int randomFamilies[] = RandomizeArray(india.get(1).size());
 
+        //System.out.println("@@@@@@@");
+
+
         //Loop till length of randomFamilies[]
         for (int i = 1; i < randomFamilies.length - 1; i++)
         {
             if (maleOrFemale()) //male encountered
             {
                 //Ruling out nearby families in mating game
-                if (!(randomFamilies[i] + 1 == randomFamilies[i+1]) ||
-                        (randomFamilies[i] - 1 == randomFamilies[i-1]) ||
-                        randomFamilies[i] < 1)
+                if ((randomFamilies[i] + 1 != randomFamilies[i+1]) &&
+                        (randomFamilies[i] - 1 != randomFamilies[i-1]) &&
+                        (randomFamilies[i] > 0))
                 {
                     //Looping till a match is found
-                    while (!selectMatch(randomFamilies[i]))
+                    while (!selectMatch(randomFamilies[i]), randomFamilies[])
                     {
                         //Keep looping till a match is found
                     }
                     //decrement family size as mate has been found
+                    //System.out.println("DDDDDDDDDDDDDDDDDD");
                     int foo = (Integer)(india.get(1).get(randomFamilies[i]));
-                    //System.out.println(india.get(1).get(randomFamilies[i]));
+                    //System.out.println("EEEEEEEEEEEEEEEEE");
                     --foo;
+                    if (foo < 0)
+                    {
+                        foo = 0;
+                    }
+                    //System.out.println("FFFFFFFFFFFFFFFFF");
                     india.get(1).set(i, foo);
+                    //System.out.println("GGGGGGGGGGGGG");
 
                 }
 
@@ -53,7 +61,7 @@ public class Martian
         }
 
 
-    System.out.println(india);
+
 
 
     }
@@ -93,8 +101,9 @@ public class Martian
     }
 
     //Selecting a match from other family
-    public boolean selectMatch (int current)
+    public boolean selectMatch (int current, int randomFamilies[])
     {
+
         return true;
     }
 

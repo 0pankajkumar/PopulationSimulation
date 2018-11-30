@@ -6,11 +6,11 @@ public class Test2
     {
         int a = 0;
         //declaring ArrayList with initial size n
-        ArrayList<ArrayList> india = new ArrayList<ArrayList>(5);
+        ArrayList<ArrayList> india = new ArrayList<ArrayList>();
 
         for (int j = 0; j < 5; j++)
         {
-            ArrayList<Integer> maharashtra = new ArrayList<Integer>(5);
+            ArrayList<Integer> maharashtra = new ArrayList<Integer>();
             for (int i = 0; i < 5; i++)
             {
                 maharashtra.add(a);
