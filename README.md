@@ -18,12 +18,15 @@ This switching is done in robin round manner by binding java threads with Operat
 
 Still we will try to best simulate the situation.
 
-[Update]
+#[Update]
 We are no longer using threads to simulate the situation.
-|Reason:| |Java doesn't supply a lot of threads|
-|Elaborate:| |Population had started booming uncontrolled and we realized that an infinite loop was written. We were running out of native threads supplied by my operating system. That means population at a time is limited in this world.|
-|Further Options:| |Someone suggested to use **Go coroutines** as it doesn't has 1:1 ratio with OS threads or just wait for **Java fiber**|
-|||A Grapewine type data structure is used using ArrayList to grow each generation of Humans.|
+
+|         |          |
+| ------------: |:------------- |
+| Reason:       | Java doesn't supply a lot of threads |
+| Elaborate:    | Population had started booming uncontrolled and we realized that an infinite loop was written. We were running out of native threads supplied by my operating system. That means population at a time is limited in this world.      |
+| Further Options: | Someone suggested to use **Go coroutines** as it doesn't has 1:1 ratio with OS threads or just wait for **Java fiber**|
+||A Grapewine type data structure is used using ArrayList to grow each generation of Humans.|
 
 
 ## Rules of the Game
