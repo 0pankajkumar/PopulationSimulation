@@ -18,6 +18,13 @@ This switching is done in robin round manner by binding java threads with Operat
 
 Still we will try to best simulate the situation.
 
+[Update]
+We are no longer using threads to simulate the situation.
+|Reason:| |Java doesn't supply a lot of threads|
+|Elaborate:| |Population had started booming uncontrolled and we realized that an infinite loop was written. We were running out of native threads supplied by my operating system. That means population at a time is limited in this world.|
+|Further Options:| |Someone suggested to use **Go coroutines** as it doesn't has 1:1 ratio with OS threads or just wait for **Java fiber**|
+|||A Grapewine type data structure is used using ArrayList to grow each generation of Humans.|
+
 
 ## Rules of the Game
 1. 10 couples start the game at 2000 B.C.
@@ -30,6 +37,4 @@ Still we will try to best simulate the situation.
 8. Each human is given a unique identification number like social security or aadhar.
 
 
-A quick tree
-![tree structure](https://raw.githubusercontent.com/805bluebell/PopulationSimulation/master/Initial_Tree_Structure.jpg)
 
