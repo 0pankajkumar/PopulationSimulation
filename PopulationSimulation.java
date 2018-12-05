@@ -34,7 +34,6 @@ public class PopulationSimulation
         initialGenerations();
 
         System.out.println(Martian.india);
-        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
 
         //loop till 2000 assuming 100 years for each generation
         for (int u = 0; u < 2000; u++)
@@ -42,7 +41,7 @@ public class PopulationSimulation
 
             obj.mate(); //Includes die.
         }
-        System.out.println("%%%%%%%%%");
+
         System.out.println(Martian.india);
     }
 

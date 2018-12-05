@@ -8,6 +8,8 @@ public class Test2
         //declaring ArrayList with initial size n
         ArrayList<ArrayList> india = new ArrayList<ArrayList>();
 
+        System.out.println(india);
+
         for (int j = 0; j < 5; j++)
         {
             ArrayList<Integer> maharashtra = new ArrayList<Integer>();

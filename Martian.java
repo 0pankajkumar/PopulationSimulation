@@ -24,12 +24,14 @@ public class Martian
         */
         int randomFamilies[] = RandomizeArray(india.get(1).size());
 
-        //System.out.println("@@@@@@@");
+        Random rand = new Random(); //For random numbers
 
+        ArrayList<Integer> maharashtra = new ArrayList<Integer>();
 
         //Loop till length of randomFamilies[]
         for (int i = 1; i < randomFamilies.length - 1; i++)
         {
+
             if (maleOrFemale()) //male encountered
             {
                 //Ruling out nearby families in mating game
@@ -38,27 +40,32 @@ public class Martian
                         (randomFamilies[i] > 0))
                 {
                     //Looping till a match is found
-                    while (!selectMatch(randomFamilies[i]), randomFamilies[])
+                    while (!selectMatch(randomFamilies[i], randomFamilies))
                     {
                         //Keep looping till a match is found
                     }
+
+                    //Add siblings to next generation for found match
+                    maharashtra.add(rand.nextInt(10));
+
                     //decrement family size as mate has been found
-                    //System.out.println("DDDDDDDDDDDDDDDDDD");
                     int foo = (Integer)(india.get(1).get(randomFamilies[i]));
-                    //System.out.println("EEEEEEEEEEEEEEEEE");
+
                     --foo;
+
                     if (foo < 0)
                     {
                         foo = 0;
                     }
-                    //System.out.println("FFFFFFFFFFFFFFFFF");
+
                     india.get(1).set(i, foo);
-                    //System.out.println("GGGGGGGGGGGGG");
+
 
                 }
 
             }
         }
+        india.add(maharashtra);
 
 
 
