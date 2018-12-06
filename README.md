@@ -39,5 +39,12 @@ We are no longer using threads to simulate the situation.
 7. Number of children given birth by a couple is randomized between 0 to 10 numbers.
 8. Each human is given a unique identification number like social security or aadhar.
 
+## Factors affecting marriages (To be implemented in later versions)
+1. [Marriage in Islam](https://en.wikipedia.org/wiki/Marriage_in_Islam)
+2. [Marriage prohibitions in Christianity](http://www.eternalgod.org/q-a-13060/)
+3. Hindu Marriage
+   - [The Hindu Marriage Act, 1955](https://en.wikipedia.org/wiki/The_Hindu_Marriage_Act,_1955)
+   - [Sati (practise)](https://en.wikipedia.org/wiki/Sati_(practice))
+
 
 
