@@ -17,7 +17,9 @@ public class Test2
             {
                 maharashtra.add(a);
                 a++;
+                maharashtra.remove(i);
             }
+            maharashtra.remove(2);
             india.add(maharashtra);
         }
 
