@@ -1,5 +1,3 @@
-//Pseudo code only
-
 
 import java.util.*;
 
@@ -35,7 +33,6 @@ public class Jupiterite
 
                 int selection2 = rand.nextInt(firstGen.size());
 
-                boolean flag = false;
 
                     //Trap for invalid matches
                     while(firstGen.get(selection2) == 0 || selection2 == selection || selection2 == selection+1 || selection2 == selection-1)
@@ -57,8 +54,6 @@ public class Jupiterite
                         firstGen.set(selection2,boo);
 
 
-                        flag = true;
-
                 //Removing all zero elements
                 for(int i = 0; i < firstGen.size(); i++)
                 {
@@ -71,14 +66,26 @@ public class Jupiterite
 
             }
 
-        System.out.println("Outside all Loops");
+        System.out.println("Before swapping ~~~");
         System.out.println(generations);
 
-        zeroGen = firstGen;
-        firstGen = secondGen;
-        ArrayList<Integer> temp = new ArrayList<Integer>();
-        secondGen = temp;
-        System.out.println(generations.get(1));
+        zeroGen.clear();
+        for(int i = 0; i < firstGen.size(); i++)
+        {
+            zeroGen.add(firstGen.get(i));
+        }
+
+        firstGen.clear();
+        for(int i = 0; i < secondGen.size(); i++)
+        {
+            firstGen.add(secondGen.get(i));
+        }
+
+        secondGen.clear();
+
+        System.out.println("After swapping ~~~");
+        System.out.println(generations);
+
     }
 
     public static void initialStuff()
@@ -146,11 +153,15 @@ public class Jupiterite
 
     public static void main(String[] args)
     {
+        System.out.println("Start ...");
         initialStuff();
+
         wave(); //Run thousand times
-        wave();
-        System.out.println("Gen 1 size" + generations.get(0).size());
-        System.out.println("Gen 2 size" + generations.get(1).size());
-        System.out.println("Gen 3 size" + generations.get(2).size());
+        //wave();
+
+        System.out.println();
+        System.out.println("Gen 1 size : " + generations.get(0).size());
+        System.out.println("Gen 2 size : " + generations.get(1).size());
+        System.out.println("Gen 3 size : " + generations.get(2).size());
     }
 }
