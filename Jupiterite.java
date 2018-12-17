@@ -91,7 +91,7 @@ public class Jupiterite
         ArrayList<Integer> temp = new ArrayList<Integer>();
         for(int i = 0; i < 10; i++)
         {
-            temp.add(rand.nextInt(4));
+            temp.add(rand.nextInt(4) + 1);
         }
         generations.add(temp);
 
@@ -99,7 +99,7 @@ public class Jupiterite
         ArrayList<Integer> temp2 = new ArrayList<Integer>();
         for(int i = 0; i < 10; i++)
         {
-            temp2.add(rand.nextInt(4));
+            temp2.add(rand.nextInt(4) + 1);
         }
         generations.add(temp2);
 
@@ -107,7 +107,7 @@ public class Jupiterite
         ArrayList<Integer> temp3 = new ArrayList<Integer>();
         for(int i = 0; i < 10; i++)
         {
-            temp3.add(rand.nextInt(4));
+            temp3.add(rand.nextInt(4) + 1);
         }
         generations.add(temp3);
 
