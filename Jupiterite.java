@@ -27,7 +27,7 @@ public class Jupiterite
                     //System.out.println("Inside Loop 2");
                     firstGen.remove(selection);
                     selection = rand.nextInt(firstGen.size());
-                    System.out.println(generations);
+                    //System.out.println(generations);
                 }
 
 
@@ -46,7 +46,7 @@ public class Jupiterite
                     }
 
                         //Adding children to the couple in next generation
-                        secondGen.add(rand.nextInt(10));
+                        secondGen.add(rand.nextInt(10) + 1);
 
                         int foo = firstGen.get(selection) - 1;
                         int boo = firstGen.get(selection2) - 1;
@@ -66,16 +66,12 @@ public class Jupiterite
 
             }
 
-        System.out.println("Before swapping ~~~");
-        System.out.println(generations);
+        //System.out.println("Before swapping ~~~");
+        //System.out.println(generations);
 
         zeroGen.clear();
-        for(int i = 0; i < firstGen.size(); i++)
-        {
-            zeroGen.add(firstGen.get(i));
-        }
-
         firstGen.clear();
+
         for(int i = 0; i < secondGen.size(); i++)
         {
             firstGen.add(secondGen.get(i));
@@ -83,8 +79,8 @@ public class Jupiterite
 
         secondGen.clear();
 
-        System.out.println("After swapping ~~~");
-        System.out.println(generations);
+        //System.out.println("After swapping ~~~");
+        //System.out.println(generations);
 
     }
 
@@ -115,7 +111,7 @@ public class Jupiterite
         }
         generations.add(temp3);
 
-        System.out.println(generations);
+        //System.out.println(generations);
 
     }
 
@@ -146,22 +142,30 @@ public class Jupiterite
         }
         generations.add(temp3);
 
-        System.out.println(generations);
+        //System.out.println(generations);
 
     }
 
 
     public static void main(String[] args)
     {
-        System.out.println("Start ...");
+        //System.out.println("Start ...");
         initialStuff();
 
-        wave(); //Run thousand times
-        //wave();
+        //ArrayList<Integer> count= new ArrayList<Integer>(2);
 
-        System.out.println();
+        int count = 0;
+        for(int i = 0; i < 15; i++)
+        {
+            wave();
+            count = generations.get(0).size() + generations.get(1).size() + generations.get(2).size();
+
+            System.out.println("Gen " + (i+1) + " had " + count);
+        }
+
+        /*System.out.println();
         System.out.println("Gen 1 size : " + generations.get(0).size());
         System.out.println("Gen 2 size : " + generations.get(1).size());
-        System.out.println("Gen 3 size : " + generations.get(2).size());
+        System.out.println("Gen 3 size : " + generations.get(2).size());*/
     }
 }
