@@ -51,7 +51,7 @@ The project has been a lot on learning side for us.
 - Multithreading : Threads are expensive task on a system & their quantity is limited (in thousands)
 - Asymptotic completixity of a program is very important. We think a computer to be super fast with loads of memory. But it has limitations. We ended up on the higher side to never know the end results.
 
-[Output:](https://github.com/805bluebell/PopulationSimulation/blob/master/output.txt)
+[Output can be seen here.](https://github.com/805bluebell/PopulationSimulation/blob/master/output.txt)
 
 These numbers above represent persons in each generation. It keeps on running after that. 
 Asymptotic completixity need to be improved.
