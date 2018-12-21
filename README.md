@@ -46,7 +46,7 @@ We are no longer using threads to simulate the situation.
 ||As of now, A Grapewine type data structure is being used with Java's ArrayList to grow each generation of Humans.|
 
 ### [Freezing out]
-The project has been a lot on learning side for us.
+The project has been on a lot of learning regarding both Java & programming.
 #### Problems encountered
 - Multithreading : Threads are expensive task on a system & their quantity is limited (in thousands)
 - Asymptotic completixity of a program is very important. We think a computer to be super fast with loads of memory. But it has limitations. We ended up on the higher side to never know the end results.
