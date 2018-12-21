@@ -18,17 +18,6 @@ This switching is done in robin round manner by binding java threads with Operat
 
 Still we will try to best simulate the situation.
 
-### [Update]
-We are no longer using threads to simulate the situation.
-
-|         |          |
-| ------------: |:------------- |
-| Reason:       | Java doesn't supply a lot of threads |
-| Elaborate:    | Population had started booming uncontrolled and we realized that an infinite loop was written. We were running out of native threads supplied by my operating system. That means population at a time is limited in this world.      |
-| Further Options: | Someone suggested to use **Go coroutines** as it doesn't has 1:1 ratio with OS threads or just wait for **Java fiber**|
-||As of now, A Grapewine type data structure is being used with Java's ArrayList to grow each generation of Humans.|
-
-
 ## Rules of the Game
 1. 10 couples start the game at 2000 B.C.
 2. End goal is always to determine population in 2018.
@@ -45,6 +34,39 @@ We are no longer using threads to simulate the situation.
 3. Hindu Marriage
    - [The Hindu Marriage Act, 1955](https://en.wikipedia.org/wiki/The_Hindu_Marriage_Act,_1955)
    - [Sati (practise)](https://en.wikipedia.org/wiki/Sati_(practice))
+   
+### [Update]
+We are no longer using threads to simulate the situation.
 
+|         |          |
+| ------------: |:------------- |
+| Reason:       | Java doesn't supply a lot of threads |
+| Elaborate:    | Population had started booming uncontrolled and we realized that an infinite loop was written. We were running out of native threads supplied by my operating system. That means population at a time is limited in this world.      |
+| Further Options: | Someone suggested to use **Go coroutines** as it doesn't has 1:1 ratio with OS threads or just wait for **Java fiber**|
+||As of now, A Grapewine type data structure is being used with Java's ArrayList to grow each generation of Humans.|
+
+### [Freezing out]
+The project has been a lot on learning side for us.
+#### Problems encountered
+- Multithreading : Threads are expensive task on a system & their quantity is limited (in thousands)
+- Asymptotic completixity of a program is very important. We think a computer to be super fast with loads of memory. But it has limitations. We ended up on the higher side to never know the end results.
+
+Output:
+Gen 1 had 16
+Gen 2 had 23
+Gen 3 had 55
+Gen 4 had 142
+Gen 5 had 393
+Gen 6 had 1089
+Gen 7 had 2989
+Gen 8 had 8141
+Gen 9 had 22483
+Gen 10 had 61860
+Gen 11 had 170311
+Gen 12 had 468681
+Gen 13 had 1288911
+
+These numbers above represent persons in each generation. It keeps on running after that. 
+Asymptotic completixity need to be improved.
 
 
